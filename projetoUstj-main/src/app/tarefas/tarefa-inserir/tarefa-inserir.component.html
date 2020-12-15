@@ -1,0 +1,33 @@
+<mat-expansion-panel [expanded]="expandir">
+  <mat-expansion-panel-header>Novo lembrete</mat-expansion-panel-header>
+  <mat-card>
+    <form (submit)="onSalvarTarefa(tarefaForm)" #tarefaForm="ngForm">
+      <mat-form-field>
+        <input type="text" matInput placeholder="Digite seu titulo" name="titulo" [ngModel]="tarefaEditando?.titulo"
+          required minlength="3" #titulo="ngModel" />
+        <mat-error *ngIf="titulo.invalid">Digite um titulo válido</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Digite uma descrição da tarefa</mat-label>
+        <textarea matInput name="descricao" rows="5" [ngModel]="tarefaEditando?.descricao" required
+          #descricao="ngModel"></textarea>
+        <mat-error *ngIf="descricao.invalid">Digite uma descrição</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Data de conclusão</mat-label>
+        <input matInput [matDatepicker]="dataConclusao" name="dataConclusao" required
+          [ngModel]="tarefaEditando?.dataConclusao" #dataConclusaoInput="ngModel">
+        <mat-datepicker-toggle matSuffix [for]="dataConclusao"></mat-datepicker-toggle>
+        <mat-datepicker #dataConclusao></mat-datepicker>
+        <mat-error *ngIf="dataConclusaoInput.invalid">Selecione uma data</mat-error>
+      </mat-form-field>
+
+      <button class="btn btn-success">
+        Salvar
+      </button>
+    </form>
+  </mat-card>
+
+</mat-expansion-panel>

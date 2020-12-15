@@ -1,0 +1,28 @@
+<mat-card>
+  <mat-toolbar>
+    <div class="col-md-11">Meus Lembretes</div>
+  </mat-toolbar>
+    <form (submit)="onSubmit(loginForm)" #loginForm="ngForm">
+      <mat-form-field>
+        <input type="email" matInput placeholder="Digite seu e-mail" name="email" ngModel email required #email="ngModel" />
+        <mat-error *ngIf="email.invalid">Digite um e-mail válido</mat-error>
+      </mat-form-field>
+  
+      <mat-form-field>
+        <input type="password" matInput placeholder="Digite sua senha" name="senha" ngModel required #senha="ngModel" />
+        <mat-error *ngIf="senha.invalid">Digite uma senha válida</mat-error>
+      </mat-form-field>
+
+      <mat-form-field *ngIf="cadastrarUsuario">
+        <input type="password" matInput placeholder="Confirme sua senha" name="confirmarSenha" required ngModel #confirmarSenha="ngModel" />
+      </mat-form-field>
+
+      <button class="btn btn-success">
+        {{ textoBotao1 }}
+      </button>
+      &nbsp;
+      <button type="button" class="btn btn-outline-secondary" (click)="atualizarFormulario()">
+          {{ textoBotao2 }}
+      </button>
+    </form>
+  </mat-card>

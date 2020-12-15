@@ -1,0 +1,78 @@
+:host {
+  margin-top: 1rem;
+  display: block;
+}
+
+.tarefa-card {
+  width: 23%;
+  min-width: 280px;
+  margin: 20px 10px;
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+  display: inline-block;
+  vertical-align: top;
+  white-space: pre-line;
+  overflow-wrap: break-word;
+}
+
+.mat-card {
+  background-color: #d2f6c5;
+}
+
+.mat-card-avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+pre {
+  font-size: 120%;
+}
+
+.data {
+  font-size: 10px;
+  text-align: right;
+}
+
+mat-card-actions {
+  position: relative;
+  bottom: 1em;
+  float: left;
+}
+
+mat-card-content {
+  height: 75%;
+}
+
+.rodape {
+  position: relative;
+  height: auto;
+  width: 100%;
+  float: left;
+}
+
+.mat-accordion {
+  display: inline-flex;
+  overflow-y: hidden;
+  width: 100%;
+  position: relative;
+  display: inline-block;
+}
+
+.vermelho {
+  background-color: #fddad3;
+}
+
+.amarelo {
+  background-color: #FDFDB0;
+}
+
+.verde {
+  background-color: #C5FCC5;
+}
+
+.legenda {
+  margin-bottom: 40px;
+  background-color: #EEE9E9;
+}

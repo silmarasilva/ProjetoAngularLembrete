@@ -1,0 +1,38 @@
+<mat-accordion *ngIf="tarefas.length > 0">
+    <mat-card class="tarefa-card" *ngFor="let tarefa of tarefas" [ngClass]="trocaCor(tarefa.dataConclusao)">
+        <mat-card-header>
+            <div mat-card-avatar>
+                <mat-icon>event</mat-icon>
+            </div>
+            <mat-card-title>{{ tarefa.titulo }}</mat-card-title>
+            <mat-card-subtitle>previsto para {{ tarefa.dataConclusao | date:'dd/MM/yyyy' }}</mat-card-subtitle>
+        </mat-card-header>
+        <hr>
+        <mat-card-content>
+            <span>{{ tarefa.descricao }}</span>
+        </mat-card-content>
+        <div class="rodape">
+            <p class="data">criado em {{ tarefa.dataCadastro | date:'dd/MM/yyyy' }}</p>
+        </div>
+        <mat-card-actions>
+            <button mat-button color="primary" (click)="onEdit(tarefa)">EDITAR</button>
+            <button mat-button color="warn" (click)="onDelete(tarefa.id)">EXCLUIR</button>
+
+        </mat-card-actions>
+    </mat-card>
+</mat-accordion>
+<p class="mat-body-1" style="text-align: center;" *ngIf="tarefas.length <= 0">
+    Nenhuma tarefa cadastrada.
+</p>
+<div>
+    <mat-expansion-panel class="legenda">
+        <mat-expansion-panel-header>Legenda</mat-expansion-panel-header>
+        <ul>
+            <li>Os Lembretes ficam <b class="vermelho">vermelho</b> quando a data de conclusão tem o prazo de 1 dia</li>
+            <li>Os Lembretes ficam <b class="amarelo">amarelo</b> quando a data de conclusão tem o prazo de menos de 4
+                dias</li>
+            <li>Os Lembretes ficam <b class="verde">verde</b> quando a data de conclusão tem o prazo acima de 5 dias
+            </li>
+        </ul>
+    </mat-expansion-panel>
+</div>

@@ -1,0 +1,16 @@
+mat-card {
+  text-align: center;
+  width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #EEE9E9;
+}
+
+mat-form-field, input {
+  width: 100%;
+}
+
+.mat-toolbar {
+  background-color: #438a5e;
+  color: honeydew;
+}
